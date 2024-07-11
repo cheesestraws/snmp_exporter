@@ -87,10 +87,10 @@ generator: *.go
 	go build
 
 generate: generator mibs
-	MIBDIRS=$(MIB_PATH) ./generator --fail-on-parse-errors generate
+	MIBDIRS=$(MIB_PATH):local_mibs ./generator --fail-on-parse-errors generate
 
 parse_errors: generator mibs
-	MIBDIRS=$(MIB_PATH) ./generator --fail-on-parse-errors parse_errors
+	MIBDIRS=$(MIB_PATH):local_mibs ./generator --fail-on-parse-errors parse_errors
 
 .PHONY: docker
 docker:
