@@ -107,6 +107,15 @@ modules:
         type: EnumAsStateSet
       upsAdvBatteryChargerStatus:
         type: EnumAsStateSet
+        
+  apcrpdu:
+    walk:
+      - rPDULoadStatusTable   # rPDULoadStatusTable
+      - rPDUOutletStatusTable # rPDUOutletStatusTable
+    lookups:
+      - source_indexes: [rPDUOutletStatusIndex]
+        lookup: rPDUOutletStatusOutletName
+        drop_source_indexes: false
 
 # ServerTech Sentry 3 MIB
 #
