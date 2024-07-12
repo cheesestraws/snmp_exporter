@@ -26,6 +26,13 @@ modules:
       - source_indexes: [bgpPeerRemoteAddr]
         lookup: bgpPeerRemoteAs
         drop_source_indexes: false
+        
+  extremexos:
+    walk:
+      - extremeOverTemperatureAlarm
+      - extremeCurrentTemperature
+      - extremeFanStatusTable
+      - extremePowerSupplyTable
 
   # Default IF-MIB interfaces table with ifIndex.
   if_mib:
